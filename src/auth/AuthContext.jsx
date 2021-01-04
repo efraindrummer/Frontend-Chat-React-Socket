@@ -1,3 +1,4 @@
+import React from 'react';
 import { createContext, useCallback, useState } from 'react';
 
 export const AuthContext = createContext();
@@ -10,7 +11,6 @@ const initialState = {
     email: null,
 };
 
-import React from 'react'
 
 export const AuthProvider = ({ children }) => {
 
