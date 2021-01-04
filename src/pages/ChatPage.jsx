@@ -1,9 +1,51 @@
-import React from 'react'
+import React from 'react';
+import { InboxPeople } from '../components/InboxPeople';
+import '../css/chat.css'
 
 export const ChatPage = () => {
     return (
-        <div>
-            Chat Page
+        <div className="messaging">
+            <div className="inbox_msg">
+                <InboxPeople />
+
+                <div className="mesgs">
+
+                    <div className="msg_history">
+
+                        <div className="incoming_msg">
+                            <div className="incoming_msg_img">
+                                <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil" />
+                            </div>
+                            <div className="received_msg">
+                                <div className="received_withd_msg">
+                                    <p>Test which is a new approach to have all
+                                        solutions</p>
+                                    <span className="time_date"> 11:01 AM | June 9</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="outgoing_msg">
+                            <div className="sent_msg">
+                                <p>Test which is a new approach to have all
+                                    solutions</p>
+                                <span className="time_date"> 11:01 AM | June 9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="type_msg row">
+                        <div className="input_msg_write col-sm-9">
+                            <input type="text" className="write_msg" placeholder="Mensaje..." />
+                        </div>
+                        <div className="col-sm-3 text-center">
+                            <button className="msg_send_btn mt-3" type="button">
+                                enviar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
