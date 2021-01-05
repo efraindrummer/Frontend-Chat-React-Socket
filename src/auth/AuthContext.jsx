@@ -32,7 +32,6 @@ export const AuthProvider = ({ children }) => {
                 name: usuario.nombre,
                 email: usuario.email,
             });
-            console.log('Autenticado Correctamente');
         }
 
         return resp.ok;
@@ -53,7 +52,6 @@ export const AuthProvider = ({ children }) => {
                 name: usuario.nombre,
                 email: usuario.email,
             });
-            console.log('Autenticado Correctamente');
             return true;
         }
 
@@ -92,7 +90,6 @@ export const AuthProvider = ({ children }) => {
                 email: usuario.email,
             });
 
-            console.log('Autenticado Correctamente');
             return true;
 
         }else{
