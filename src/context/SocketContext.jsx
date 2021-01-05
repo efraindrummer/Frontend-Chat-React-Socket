@@ -24,7 +24,16 @@ export const SocketProvider = ({ children }) => {
         if(!auth.logged){
             desconectarSocket();
         }
-    }, [auth, desconectarSocket])
+    }, [auth, desconectarSocket]);
+
+    useEffect(() => {
+        socket?.on('mensaje-personal', (mensaje) => {
+            dispatch({
+                type: types.nuevoMensaje,
+                payload: mensaje
+            })
+        })
+    }, [socket, dispatch]);
 
     //Efecto para escuchar los cambios de los usuarios conectados
     useEffect(() => {
