@@ -11,7 +11,7 @@ export const Messages = () => {
     const { auth } = useContext(AuthContext);
 
     return (
-        <div className="mesgs">
+        <div id="mensajes" className="mesgs">
             <div className="msg_history">
                 {
                     chatState.mensajes.map(msg => (

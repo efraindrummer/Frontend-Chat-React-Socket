@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { createContext } from 'react';
 import { AuthContext } from '../auth/AuthContext';
+import { scrollToButtonAnimated } from '../helpers/scrollToButton';
 import { useSocket } from '../hooks/useSocket'
 import { types } from '../types/types';
 import { ChatContext } from './chat/ChatContext';
@@ -42,6 +43,8 @@ export const SocketProvider = ({ children }) => {
                 type: types.usuariosCargados,
                 payload: usuarios
             })
+
+            scrollToButtonAnimated('mensajes');
         })
     }, [socket, dispatch]);
     

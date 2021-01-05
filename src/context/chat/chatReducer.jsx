@@ -7,11 +7,17 @@ import { types } from "../../types/types";
     mensajes: [], //Mensajes del chat seleccionado
 }
  */
-export const chatReducer = ( state, action) => {
-
-    console.log(action);
-    
+export const chatReducer = ( state, action ) => {
+  
     switch (action.type) {
+
+        case types.cerrarSesion:
+            return {
+                uid: '',
+                chatActivo: null,
+                usuarios: [],
+                mensajes: []
+            }
 
         case types.usuariosCargados:
             return {
@@ -37,6 +43,12 @@ export const chatReducer = ( state, action) => {
                 }
             }else{
                 return state;
+            }
+
+        case types.cargarMensajes:
+            return {
+                ...state,
+                mensajes: [...action.payload],
             }
             
         default:
